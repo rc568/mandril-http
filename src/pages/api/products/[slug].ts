@@ -1,6 +1,8 @@
 import type { APIRoute } from "astro";
 import { products } from "@/lib/data";
 
+export const prerender = false
+
 const url = '/api/get-products.json'
 
 export const GET: APIRoute = async ({ params, request }) => {
