@@ -1,6 +1,5 @@
 import type { APIRoute } from "astro";
 import { products } from "@/lib/data";
-import { slugify } from "@/lib/utils";
 
 export const prerender = false
 
@@ -24,7 +23,7 @@ export const GET: APIRoute = async ({ params, request }) => {
         })
 
         return new Response(JSON.stringify(filterProducts), {
-            status: 201,
+            status: 200,
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -33,7 +32,7 @@ export const GET: APIRoute = async ({ params, request }) => {
 
 
     return new Response(JSON.stringify(allProducts), {
-        status: 201,
+        status: 200,
         headers: {
             'Content-Type': 'application/json'
         }

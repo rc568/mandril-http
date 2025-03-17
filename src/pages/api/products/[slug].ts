@@ -13,7 +13,7 @@ export const GET: APIRoute = async ({ params, request }) => {
 
     if (product) {
         return new Response(JSON.stringify(product), {
-            status: 201,
+            status: 200,
             headers: {
                 'Content-Type': 'application/json'
             }
