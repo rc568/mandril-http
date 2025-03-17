@@ -1,0 +1,30 @@
+import type { APIRoute } from "astro";
+import { products } from "@/lib/data";
+
+const url = '/api/get-products.json'
+
+export const GET: APIRoute = async ({ params, request }) => {
+
+    const { slug } = params
+
+    const product = products.find(p => p.slug === slug)
+
+    if (product) {
+        return new Response(JSON.stringify(product), {
+            status: 201,
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+    }
+
+    return new Response(JSON.stringify({
+        msg: `Product ${slug} not found`
+    }), {
+        status: 404,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+}
