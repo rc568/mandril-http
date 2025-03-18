@@ -1,7 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import LikeCounter from "@/components/likes/LikeCounter.vue";
-import { number } from "astro:schema";
+import LikeCounterAction from "@/components/likes/LikeCounterAction.vue";
 
 interface CategoryResponse {
   id: string;
@@ -24,7 +24,8 @@ const data = (await resp.json()) as CategoryResponse[];
             <div class="flex items-center justify-between w-md">
               <h2>{category.title}</h2>
               <div class="h-10 w-fit">
-                <LikeCounter client:only="vue" postId={(index + 1).toString()} />
+                {/* <LikeCounter client:only="vue" postId={(index + 1).toString()} /> */}
+                <LikeCounterAction client:only="vue" postId={(index + 1).toString()} />
               </div>
             </div>
             <span class="text-base text-purple-800 px-6 py-3 rounded-2xl bg-amber-300 inline-block mt-2">
