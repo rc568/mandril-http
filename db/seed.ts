@@ -1,4 +1,5 @@
-import { Category, db, Product } from 'astro:db';
+import { categories } from '@/lib/data';
+import { Category, db, Posts, Product } from 'astro:db';
 
 // https://astro.build/db/seed
 export default async function seed() {
@@ -3116,165 +3117,175 @@ export default async function seed() {
 	await db.insert(Category).values([
 		{
 			"title": "Accesorios",
-			"srcImage": "/images/products/6.jpg",
+			"src_image": "/images/products/6.jpg",
 			"slug": "accesorios",
-			"id": 0
+			"id": "0"
 		},
 		{
 			"title": "Adaptadores",
-			"srcImage": "/images/products/2.jpg",
+			"src_image": "/images/products/2.jpg",
 			"slug": "adaptadores",
-			"id": 1
+			"id": "1"
 		},
 		{
 			"title": "Almacenamiento",
-			"srcImage": "/images/products/4.jpg",
+			"src_image": "/images/products/4.jpg",
 			"slug": "almacenamiento",
-			"id": 2
+			"id": "2"
 		},
 		{
 			"title": "Antenas",
-			"srcImage": "/images/products/4.jpg",
+			"src_image": "/images/products/4.jpg",
 			"slug": "antenas",
-			"id": 3
+			"id": "3"
 		},
 		{
 			"title": "Audio",
-			"srcImage": "/images/products/6.jpg",
+			"src_image": "/images/products/6.jpg",
 			"slug": "audio",
-			"id": 4
+			"id": "4"
 		},
 		{
 			"title": "Balanzas",
-			"srcImage": "/images/products/5.jpg",
+			"src_image": "/images/products/5.jpg",
 			"slug": "balanzas",
-			"id": 5
+			"id": "5"
 		},
 		{
 			"title": "Cables",
-			"srcImage": "/images/products/7.jpg",
+			"src_image": "/images/products/7.jpg",
 			"slug": "cables",
-			"id": 6
+			"id": "6"
 		},
 		{
 			"title": "Calibrador",
-			"srcImage": "/images/products/8.jpg",
+			"src_image": "/images/products/8.jpg",
 			"slug": "calibrador",
-			"id": 7
+			"id": "7"
 		},
 		{
 			"title": "Camaras",
-			"srcImage": "/images/products/9.jpg",
+			"src_image": "/images/products/9.jpg",
 			"slug": "camaras",
-			"id": 8
+			"id": "8"
 		},
 		{
 			"title": "Cargadores",
-			"srcImage": "/images/products/1.jpg",
+			"src_image": "/images/products/1.jpg",
 			"slug": "cargadores",
-			"id": 9
+			"id": "9"
 		},
 		{
 			"title": "Convertidores",
-			"srcImage": "/images/products/9.jpg",
+			"src_image": "/images/products/9.jpg",
 			"slug": "convertidores",
-			"id": 10
+			"id": "10"
 		},
 		{
 			"title": "Destornilladores",
-			"srcImage": "/images/products/3.jpg",
+			"src_image": "/images/products/3.jpg",
 			"slug": "destornilladores",
-			"id": 11
+			"id": "11"
 		},
 		{
 			"title": "MDVR",
-			"srcImage": "/images/products/6.jpg",
+			"src_image": "/images/products/6.jpg",
 			"slug": "mdvr",
-			"id": 12
+			"id": "12"
 		},
 		{
 			"title": "Modem",
-			"srcImage": "/images/products/3.jpg",
+			"src_image": "/images/products/3.jpg",
 			"slug": "modem",
-			"id": 13
+			"id": "13"
 		},
 		{
 			"title": "Modulos",
-			"srcImage": "/images/products/7.jpg",
+			"src_image": "/images/products/7.jpg",
 			"slug": "modulos",
-			"id": 14
+			"id": "14"
 		},
 		{
 			"title": "Módulos",
-			"srcImage": "/images/products/7.jpg",
+			"src_image": "/images/products/7.jpg",
 			"slug": "mdulos",
-			"id": 15
+			"id": "15"
 		},
 		{
 			"title": "Multimetro",
-			"srcImage": "/images/products/9.jpg",
+			"src_image": "/images/products/9.jpg",
 			"slug": "multimetro",
-			"id": 16
+			"id": "16"
 		},
 		{
 			"title": "Pantallas",
-			"srcImage": "/images/products/8.jpg",
+			"src_image": "/images/products/8.jpg",
 			"slug": "pantallas",
-			"id": 17
+			"id": "17"
 		},
 		{
 			"title": "Parlante",
-			"srcImage": "/images/products/10.jpg",
+			"src_image": "/images/products/10.jpg",
 			"slug": "parlante",
-			"id": 18
+			"id": "18"
 		},
 		{
 			"title": "Presentador",
-			"srcImage": "/images/products/1.jpg",
+			"src_image": "/images/products/1.jpg",
 			"slug": "presentador",
-			"id": 19
+			"id": "19"
 		},
 		{
 			"title": "Relojes",
-			"srcImage": "/images/products/2.jpg",
+			"src_image": "/images/products/2.jpg",
 			"slug": "relojes",
-			"id": 20
+			"id": "20"
 		},
 		{
 			"title": "Seguridad",
-			"srcImage": "/images/products/5.jpg",
+			"src_image": "/images/products/5.jpg",
 			"slug": "seguridad",
-			"id": 21
+			"id": "21"
 		},
 		{
 			"title": "Selladora",
-			"srcImage": "/images/products/4.jpg",
+			"src_image": "/images/products/4.jpg",
 			"slug": "selladora",
-			"id": 22
+			"id": "22"
 		},
 		{
 			"title": "Sensores",
-			"srcImage": "/images/products/5.jpg",
+			"src_image": "/images/products/5.jpg",
 			"slug": "sensores",
-			"id": 23
+			"id": "23"
 		},
 		{
 			"title": "Termómetro",
-			"srcImage": "/images/products/8.jpg",
+			"src_image": "/images/products/8.jpg",
 			"slug": "termmetro",
-			"id": 24
+			"id": "24"
 		},
 		{
 			"title": "Otros",
-			"srcImage": "/images/products/3.jpg",
+			"src_image": "/images/products/3.jpg",
 			"slug": "otros",
-			"id": 25
+			"id": "25"
 		},
 		{
 			"title": "Video",
-			"srcImage": "/images/products/10.jpg",
+			"src_image": "/images/products/10.jpg",
 			"slug": "video",
-			"id": 26
+			"id": "26"
 		}
 	])
+
+	const posts = categories.map((category, index) => {
+		return {
+			title: category.title,
+			likes: Math.round(Math.random() * 50 + 50),
+			id: index.toString()
+		}
+	})
+
+	await db.insert(Posts).values(posts)
 }

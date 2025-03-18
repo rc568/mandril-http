@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+@layer base {
+  h1 {
+    @apply text-purple-950 text-4xl font-bold;
+  }
+
+  h2 {
+    @apply text-purple-900 text-2xl font-bold;
+  }
+
+  h3 {
+    @apply text-purple-900 text-xl font-normal;
+  }
+
+  p,
+  span {
+    @apply text-purple-900 text-lg font-normal;
+  }
+}

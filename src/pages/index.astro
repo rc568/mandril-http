@@ -1,8 +1,38 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
+import LikeCounter from "@/components/likes/LikeCounter.vue";
+import { number } from "astro:schema";
 
+interface CategoryResponse {
+  id: string;
+  title: string;
+  slug: string;
+  src_image: string;
+}
+
+const resp = await fetch("https://mandril-http.pages.dev/api/categories");
+const data = (await resp.json()) as CategoryResponse[];
 ---
 
 <Layout>
-    <h1 class="text-3xl">Hola</h1>
+  <h1>Contador de likes</h1>
+  <ul class="flex flex-col gap-24 my-4">
+    {
+      data.map((category, index) => {
+        return (
+          <li>
+            <div class="flex items-center justify-between w-md">
+              <h2>{category.title}</h2>
+              <div class="h-10 w-fit">
+                <LikeCounter client:only="vue" postId={(index + 1).toString()} />
+              </div>
+            </div>
+            <span class="text-base text-purple-800 px-6 py-3 rounded-2xl bg-amber-300 inline-block mt-2">
+              {category.id} - {category.slug}
+            </span>
+          </li>
+        );
+      })
+    }
+  </ul>
 </Layout>

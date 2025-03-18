@@ -19,9 +19,18 @@ const Category = defineTable({
     id: column.text({ primaryKey: true }),
     title: column.text(),
     slug: column.text(),
-    srcImage: column.text(),
+    src_image: column.text(),
   }
 })
+
+const Posts = defineTable({
+  columns: {
+    id: column.text({ primaryKey: true }),
+    title: column.text(),
+    likes: column.number(),
+  }
+})
+
 
 
 // https://astro.build/db/config
@@ -29,5 +38,6 @@ export default defineDb({
   tables: {
     Product,
     Category,
+    Posts
   }
 });
